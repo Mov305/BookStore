@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Books from './components/Books';
 import About from './components/About';
+import Categories from './components/Categories';
 
 const App = () => (
   <div id="App">
@@ -13,6 +14,7 @@ const App = () => (
         <Navbar />
         <Routes>
           <Route exact path="/about" element={<About />} />
+          <Route exact path="/categories" element={<Categories />} />
           <Route exact path="/" element={<Books />} />
         </Routes>
         <Footer />
