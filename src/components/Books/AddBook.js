@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
-import { addBook } from '../../redux/books/books';
+import { addBookFetch } from '../../redux/books/api';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -16,9 +16,14 @@ const AddBook = () => {
     const author = authorRef.current.value;
     const id = v4();
     if (title && category && author) {
-      dispatch(addBook({
-        title, category, author, id,
-      }));
+      dispatch(
+        addBookFetch({
+          item_id: id,
+          title,
+          author,
+          category,
+        }),
+      );
       titleRef.current.value = '';
       categoryRef.current.value = '';
       authorRef.current.value = '';
