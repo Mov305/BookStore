@@ -4,7 +4,7 @@ Welcome to the book store! We are excited to offer our users a variety of functi
 
 ## Live Demo
 
-[Not Available yet](https://Mov305.github.io/BookStore)
+[Clickme](https://movbooks.netlify.app/)
 
 ## Built With
 
