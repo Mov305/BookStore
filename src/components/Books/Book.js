@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { removeBookFetch } from '../../redux/books/api';
 
-const Book = ({ book }) => {
+const Book = ({ book, handlePopup }) => {
   const {
     title, author, category, progress, chapter, id,
   } = book;
@@ -54,7 +54,11 @@ const Book = ({ book }) => {
       <div className="md:ml-10 flex flex-col items-center md:items-start text-center md:text-left md:w-52">
         <p className="text-gray-500 dark:text-gray-200 font-thin">CURRENT CHAPTER</p>
         <h4 className="dark:text-gray-100">{chapter || 'ch1'}</h4>
-        <button type="button" className="bg-[#08ACB4] text-white p-2 rounded-md mt-2 md:mt-10">
+        <button
+          type="button"
+          className="bg-[#08ACB4] text-white p-2 rounded-md mt-2 md:mt-10"
+          onClick={() => handlePopup(book)}
+        >
           UPDATE PROGRESS
         </button>
       </div>

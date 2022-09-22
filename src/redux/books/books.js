@@ -2,6 +2,7 @@
 export const ADD_BOOK = 'ADD_BOOK';
 export const REMOVE_BOOK = 'REMOVE_BOOK';
 export const Load_BOOKS = 'Load_BOOKS';
+export const EDIT_BOOK = 'EDIT_BOOK';
 
 // state
 export const initialBook = {
@@ -23,6 +24,11 @@ export const addBook = (book) => ({
 export const removeBook = (id) => ({
   type: REMOVE_BOOK,
   payload: id,
+}); // {type : revove_book, payload : id}
+
+export const editBook = (id, book) => ({
+  type: EDIT_BOOK,
+  payload: { id, book },
 });
 
 // reducer
@@ -37,6 +43,13 @@ export default function booksReducer(state = initialState, action) {
       return 'loading';
     case Load_BOOKS + '/fulfilled':
       return [...payload];
+    case EDIT_BOOK:
+      return state.map((book) => {
+        if (book.id === payload.id) {
+          return { ...book, ...payload.book };
+        }
+        return book;
+      });
     default:
       return state;
   }

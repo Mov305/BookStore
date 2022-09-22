@@ -11,7 +11,8 @@ export const fetchBooks = createAsyncThunk(Load_BOOKS, async () => {
   const data = await response.json();
   const books = Object.keys(data).map((key) => ({ ...initialBook, id: key, ...data[key][0] }));
   return books;
-});
+}); // {type : Load_BOOKS + '/rejected', payload : ''}'}
+// {type : Load_BOOKS + '/fulfilled', payload : books}
 
 export const addBookFetch = createAsyncThunk(ADD_BOOK, async (book) => {
   try {
