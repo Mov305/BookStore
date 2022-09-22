@@ -1,4 +1,4 @@
-# Math Magicians
+# Book Store
 
 Welcome to the book store! We are excited to offer our users a variety of functions to make their reading a much better experience.We have a wide selection of books to choose from, as well as helpful app which can help you find exactly what you're looking for.
 
@@ -18,6 +18,7 @@ CSS
 Javascript
 Webpack
 React
+Redux
 tailwindcss
 ```
 
